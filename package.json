@@ -10,6 +10,8 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "@amap/amap-jsapi-types": "^0.0.15",
     "@faker-js/faker": "9.3.0",
     "@tanstack/vue-query": "5.62.7",
     "@vueuse/core": "12.0.0",
@@ -23,6 +25,7 @@
     "svgo": "3.3.2",
     "svgstore": "3.0.1",
     "swiper": "11.1.15",
+    "v-scale-screen": "^2.3.0",
     "vant": "4.9.10",
     "vue": "3.5.13",
     "vue-router": "4.5.0"

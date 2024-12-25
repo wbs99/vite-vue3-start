@@ -7,3 +7,13 @@ declare module 'axios' {
     _autoLoading?: boolean
   }
 }
+
+interface AMapSecurityConfig {
+  securityJsCode: string
+}
+
+declare global {
+  interface Window {
+    _AMapSecurityConfig: AMapSecurityConfig
+  }
+}
