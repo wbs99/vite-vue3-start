@@ -17,12 +17,12 @@ export default defineConfig(({ command }) => {
       open: false,
       host: true,
       proxy: {
-        '^/api/.*': {
-          target: 'http://118.31.32.176:3000',
+        '^/gulffine/.*': {
+          target: 'http://39.174.213.36:30033',
           changeOrigin: command === 'serve',
           // rewrite: path => path.replace(/^\/api/, ''),
         },
-      }
+      },
     },
     plugins: [
       vue(),
@@ -30,14 +30,8 @@ export default defineConfig(({ command }) => {
         mockPath: 'src/mock',
       }),
       AutoImport({
-        imports: [
-          'vue',
-          'vue-router',
-          'pinia'
-        ],
-        dirs: [
-          './composables/**',
-        ],
+        imports: ['vue', 'vue-router', 'pinia'],
+        dirs: ['./composables/**'],
         dts: './src/types/auto-import.d.ts',
         vueTemplate: true,
         resolvers: [VantResolver()],
@@ -70,9 +64,9 @@ export default defineConfig(({ command }) => {
             if (id.includes('vant')) {
               return 'vant'
             }
-          }
-        }
-      }
+          },
+        },
+      },
     },
     esbuild: {
       // 打包时移除 console.log
@@ -80,7 +74,7 @@ export default defineConfig(({ command }) => {
       // 打包时移除 debugger
       drop: ['debugger'],
       // 打包时移除所有注释
-      legalComments: 'none'
+      legalComments: 'none',
     },
   }
 })

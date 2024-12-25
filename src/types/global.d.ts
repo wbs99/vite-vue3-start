@@ -1,4 +1,10 @@
-type JSONValue = null | boolean | string | number | JSONValue[] | Record<string, JSONValue>
+type JSONValue =
+  | null
+  | boolean
+  | string
+  | number
+  | JSONValue[]
+  | Record<string, JSONValue>
 
 type Resource<T> = {
   resource: T
@@ -14,4 +20,15 @@ type Resources<T> = {
 type Pager = {
   currentPage: number
   perPage: number
+}
+
+type MyResource<T> = {
+  code: number
+  msg: string
+  data: T
+}
+type MyResources<T> = {
+  code: number
+  msg: string
+  data: T[]
 }

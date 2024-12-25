@@ -16,7 +16,7 @@ const loginLoading = ref(false)
 
 const loginForm = reactive<LoginForm>({
   email: '1134954328@qq.com',
-  code: '123456'
+  code: '123456',
 })
 const onLogin = async () => {
   const response = await loginApi(loginForm, loginLoading).catch(onLoginError)

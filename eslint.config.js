@@ -4,12 +4,7 @@ import antfu from '@antfu/eslint-config'
 
 export default await antfu(
   {
-    ignores: [
-      'public',
-      'dist*',
-      '**/*.md',
-      '**/*.d.ts',
-    ],
+    ignores: ['public', 'dist*', '**/*.md', '**/*.d.ts'],
   },
   {
     rules: {
@@ -19,7 +14,6 @@ export default await antfu(
       'style/brace-style': 'off',
       'style/object-curly-spacing': 'off',
       'style/member-delimiter-style': 'off',
-      'curly': 'off',
       'antfu/consistent-list-newline': 'off',
       'antfu/top-level-function': 'off',
       'no-alert': 'off',
@@ -30,6 +24,12 @@ export default await antfu(
       'ts/consistent-type-definitions': 'off',
       'ts/comma-dangle': 'off',
       'ts/no-unused-vars': 'off',
+      'ts/no-unused-expressions': 'off',
+      'import/order': 'off',
+      'unicorn/consistent-function-scoping': 'off',
+      '@typescript-eslint/ban-ts-comment': 'off',
+      'perfectionist/sort-imports': 'off',
+      'array-callback-return': 'off',
     },
   },
   {
@@ -37,9 +37,12 @@ export default await antfu(
     rules: {
       'style/semi': ['error', 'never'],
       'vue/operator-linebreak': ['error', 'before'],
-      'vue/block-order': ['error', {
-        order: [['script', 'template'], 'style'],
-      }],
+      'vue/block-order': [
+        'error',
+        {
+          order: [['script', 'template'], 'style'],
+        },
+      ],
     },
-  },
+  }
 )
